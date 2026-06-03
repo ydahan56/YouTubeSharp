@@ -2,11 +2,11 @@ using RestSharp;
 
 namespace YouTubeSharp.Activities
 {
-    public class Activities : IActivities
+    public class TActivities : IActivities
     {
         private readonly IRestClient _youtubeApi;
 
-        public Activities(IRestClient youtubeApi)
+        public TActivities(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

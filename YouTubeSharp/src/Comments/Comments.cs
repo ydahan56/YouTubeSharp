@@ -4,11 +4,11 @@ using YouTubeSharp.Comments.Models.Response;
 
 namespace YouTubeSharp.Comments
 {
-    public class Comments : IComments
+    public class TComments : IComments
     {
         private readonly IRestClient _youtubeApi;
 
-        public Comments(IRestClient youtubeApi)
+        public TComments(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

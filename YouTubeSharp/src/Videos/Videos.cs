@@ -4,11 +4,11 @@ using YouTubeSharp.Videos.Models.Response;
 
 namespace YouTubeSharp.Videos
 {
-    public class Videos : IVideos
+    public class TVideos : IVideos
     {
         private readonly IRestClient _youtubeApi;
 
-        public Videos(IRestClient youtubeApi)
+        public TVideos(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

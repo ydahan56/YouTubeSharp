@@ -3,11 +3,11 @@ using YouTubeSharp.I18nRegions.Models.Request;
 
 namespace YouTubeSharp.I18nRegions
 {
-    public class I18nRegions : II18nRegions
+    public class TI18nRegions : II18nRegions
     {
         private readonly IRestClient _youtubeApi;
 
-        public I18nRegions(IRestClient youtubeApi)
+        public TI18nRegions(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

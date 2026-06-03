@@ -3,11 +3,11 @@ using YouTubeSharp.Watermarks.Models.Request;
 
 namespace YouTubeSharp.Watermarks
 {
-    public class Watermarks : IWatermarks
+    public class TWatermarks : IWatermarks
     {
         private readonly IRestClient _youtubeApi;
 
-        public Watermarks(IRestClient youtubeApi)
+        public TWatermarks(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

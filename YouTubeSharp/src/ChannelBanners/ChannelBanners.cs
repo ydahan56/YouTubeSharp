@@ -4,11 +4,11 @@ using YouTubeSharp.ChannelBanners.Models.Response;
 
 namespace YouTubeSharp.ChannelBanners
 {
-    public class ChannelBanners : IChannelBanners
+    public class TChannelBanners : IChannelBanners
     {
         private readonly IRestClient _youtubeApi;
 
-        public ChannelBanners(IRestClient youtubeApi)
+        public TChannelBanners(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

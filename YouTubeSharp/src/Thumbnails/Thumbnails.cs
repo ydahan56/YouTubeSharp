@@ -3,11 +3,11 @@ using YouTubeSharp.Thumbnails.Models.Request;
 
 namespace YouTubeSharp.Thumbnails
 {
-    public class Thumbnails : IThumbnails
+    public class TThumbnails : IThumbnails
     {
         private readonly IRestClient _youtubeApi;
 
-        public Thumbnails(IRestClient youtubeApi)
+        public TThumbnails(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

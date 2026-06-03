@@ -3,11 +3,11 @@ using YouTubeSharp.Search;
 
 namespace YouTubeSharp.Search;
 
-public class Search : ISearch
+public class TSearch : ISearch
 {
     private readonly IRestClient _youtubeApi;
 
-    public Search(IRestClient youtubeApi)
+    public TSearch(IRestClient youtubeApi)
     {
         this._youtubeApi = youtubeApi;
     }

@@ -4,11 +4,11 @@ using YouTubeSharp.Captions.Models.Response;
 
 namespace YouTubeSharp.Captions
 {
-    public class Captions : ICaptions
+    public class TCaptions : ICaptions
     {
         private readonly IRestClient _youtubeApi;
 
-        public Captions(IRestClient youtubeApi)
+        public TCaptions(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

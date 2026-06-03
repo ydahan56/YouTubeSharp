@@ -3,11 +3,11 @@ using YouTubeSharp.I18nLanguages.Models.Request;
 
 namespace YouTubeSharp.I18nLanguages
 {
-    public class I18nLanguages : II18nLanguages
+    public class TI18nLanguages : II18nLanguages
     {
         private readonly IRestClient _youtubeApi;
 
-        public I18nLanguages(IRestClient youtubeApi)
+        public TI18nLanguages(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

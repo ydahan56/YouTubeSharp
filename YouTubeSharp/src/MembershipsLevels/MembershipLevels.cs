@@ -3,11 +3,11 @@ using YouTubeSharp.MembershipsLevels.Models.Request;
 
 namespace YouTubeSharp.MembershipsLevels
 {
-    public class MembershipsLevels : IMembershipsLevels
+    public class TMembershipsLevels : IMembershipsLevels
     {
         private readonly IRestClient _youtubeApi;
 
-        public MembershipsLevels(IRestClient youtubeApi)
+        public TMembershipsLevels(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

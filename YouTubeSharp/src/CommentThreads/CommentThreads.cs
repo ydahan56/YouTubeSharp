@@ -4,11 +4,11 @@ using YouTubeSharp.CommentThreads.Models.Response;
 
 namespace YouTubeSharp.CommentThreads
 {
-    public class CommentThreads : ICommentThreads
+    public class TCommentThreads : ICommentThreads
     {
         private readonly IRestClient _youtubeApi;
 
-        public CommentThreads(IRestClient youtubeApi)
+        public TCommentThreads(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

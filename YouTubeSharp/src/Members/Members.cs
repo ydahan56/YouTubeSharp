@@ -3,11 +3,11 @@ using YouTubeSharp.Members.Models.Request;
 
 namespace YouTubeSharp.Members
 {
-    public class Members : IMembers
+    public class TMembers : IMembers
     {
         private readonly IRestClient _youtubeApi;
 
-        public Members(IRestClient youtubeApi)
+        public TMembers(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

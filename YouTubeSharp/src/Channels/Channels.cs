@@ -4,11 +4,11 @@ using YouTubeSharp.Channels.Models.Response;
 
 namespace YouTubeSharp.Channels
 {
-    public class Channels : IChannels
+    public class TChannels : IChannels
     {
         private readonly IRestClient _youtubeApi;
 
-        public Channels(IRestClient youtubeApi)
+        public TChannels(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

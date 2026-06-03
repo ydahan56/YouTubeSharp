@@ -4,11 +4,11 @@ using YouTubeSharp.Subscriptions.Models.Response;
 
 namespace YouTubeSharp.Subscriptions
 {
-    public class Subscriptions : ISubscriptions
+    public class TSubscriptions : ISubscriptions
     {
         private readonly IRestClient _youtubeApi;
 
-        public Subscriptions(IRestClient youtubeApi)
+        public TSubscriptions(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

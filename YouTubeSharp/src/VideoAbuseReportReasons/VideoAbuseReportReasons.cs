@@ -3,11 +3,11 @@ using YouTubeSharp.VideoAbuseReportReasons.Models.Request;
 
 namespace YouTubeSharp.VideoAbuseReportReasons
 {
-    public class VideoAbuseReportReasons : IVideoAbuseReportReasons
+    public class TVideoAbuseReportReasons : IVideoAbuseReportReasons
     {
         private readonly IRestClient _youtubeApi;
 
-        public VideoAbuseReportReasons(IRestClient youtubeApi)
+        public TVideoAbuseReportReasons(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

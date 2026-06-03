@@ -4,11 +4,11 @@ using YouTubeSharp.PlaylistImages.Models.Response;
 
 namespace YouTubeSharp.PlaylistImages
 {
-    public class PlaylistImages : IPlaylistImages
+    public class TPlaylistImages : IPlaylistImages
     {
         private readonly IRestClient _youtubeApi;
 
-        public PlaylistImages(IRestClient youtubeApi)
+        public TPlaylistImages(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

@@ -3,11 +3,11 @@ using YouTubeSharp.PlaylistItems.Models.Request;
 
 namespace YouTubeSharp.PlaylistItems
 {
-    public class PlaylistItems : IPlaylistItems
+    public class TPlaylistItems : IPlaylistItems
     {
         private readonly IRestClient _youtubeApi;
 
-        public PlaylistItems(IRestClient youtubeApi)
+        public TPlaylistItems(IRestClient youtubeApi)
         {
             this._youtubeApi = youtubeApi;
         }

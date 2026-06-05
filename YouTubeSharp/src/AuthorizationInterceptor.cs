@@ -10,9 +10,9 @@ namespace YouTubeSharp
 {
     public class AuthorizationInterceptor : Interceptor
     {
-        private readonly ICredential credential;
+        private readonly UserCredential credential;
 
-        public AuthorizationInterceptor(ICredential credential)
+        public AuthorizationInterceptor(UserCredential credential)
         {
             this.credential = credential;
         }

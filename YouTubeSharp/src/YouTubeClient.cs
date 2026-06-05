@@ -78,67 +78,47 @@ public class YouTubeClient
             );
         }
 
+        // 1. Initialize the RestClient
+        IRestClient httpClient = this.CreateRestClient(credential);
 
-        this.simpleinjector.RegisterSingleton<IRestClient>(() =>
+        // 2. Instantiate implementations directly using the 'new' keyword
+        this.Activities = new TActivities(httpClient);
+        this.Captions = new TCaptions(httpClient);
+        this.ChannelBanners = new TChannelBanners(httpClient);
+        this.Channels = new TChannels(httpClient);
+        this.ChannelSections = new TChannelSections(httpClient);
+        this.Comments = new TComments(httpClient);
+        this.CommentThreads = new TCommentThreads(httpClient);
+        this.I18NLanguages = new TI18nLanguages(httpClient);
+        this.I18NRegions = new TI18nRegions(httpClient);
+        this.Members = new TMembers(httpClient);
+        this.MembershipsLevels = new TMembershipsLevels(httpClient);
+        this.PlaylistImages = new TPlaylistImages(httpClient);
+        this.PlaylistItems = new TPlaylistItems(httpClient);
+        this.Playlists = new TPlaylists(httpClient);
+        this.Search = new TSearch(httpClient);
+        this.Subscriptions = new TSubscriptions(httpClient);
+        this.Thumbnails = new TThumbnails(httpClient);
+        this.VideoAbuseReportReasons = new TVideoAbuseReportReasons(httpClient);
+        this.VideoCategories = new TVideoCategories(httpClient);
+        this.Videos = new TVideos(httpClient);
+        this.Watermarks = new TWatermarks(httpClient);
+    }
+
+    private IRestClient CreateRestClient(UserCredential credentials)
+    {
+        
+        var options = new RestClientOptions()
         {
-            var options = new RestClientOptions()
-            {
-                BaseUrl = new Uri("https://www.googleapis.com/youtube/v3"),
-                Interceptors = new List<RestSharp.Interceptors.Interceptor>() {
-                        new AuthorizationInterceptor(default)
-                }
-            };
+            BaseUrl = new Uri("httpClients://www.googleapis.com/youtube/v3"),
+            Interceptors = new List<RestSharp.Interceptors.Interceptor>() {
+                new AuthorizationInterceptor(credentials)
+            }
+        };
 
-            var http = new RestClient(options);
-            http.AddDefaultQueryParameter("part", "snippet");
-            http.AddDefaultQueryParameter("alt", "json");
-            return http;
-        });
-
-        this.simpleinjector.RegisterSingleton<IActivities, TActivities>();
-        this.simpleinjector.RegisterSingleton<ICaptions, TCaptions>();
-        this.simpleinjector.RegisterSingleton<IChannelBanners, TChannelBanners>();
-        this.simpleinjector.RegisterSingleton<IChannels, TChannels>();
-        this.simpleinjector.RegisterSingleton<IChannelSections, TChannelSections>();
-        this.simpleinjector.RegisterSingleton<IComments, TComments>();
-        this.simpleinjector.RegisterSingleton<ICommentThreads, TCommentThreads>();
-        this.simpleinjector.RegisterSingleton<II18nLanguages, TI18nLanguages>();
-        this.simpleinjector.RegisterSingleton<II18nRegions, TI18nRegions>();
-        this.simpleinjector.RegisterSingleton<IMembers, TMembers>();
-        this.simpleinjector.RegisterSingleton<IMembershipsLevels, TMembershipsLevels>();
-        this.simpleinjector.RegisterSingleton<IPlaylistImages, TPlaylistImages>();
-        this.simpleinjector.RegisterSingleton<IPlaylistItems, TPlaylistItems>();
-        this.simpleinjector.RegisterSingleton<IPlaylists, TPlaylists>();
-        this.simpleinjector.RegisterSingleton<ISearch, TSearch>();
-        this.simpleinjector.RegisterSingleton<ISubscriptions, TSubscriptions>();
-        this.simpleinjector.RegisterSingleton<IThumbnails, TThumbnails>();
-        this.simpleinjector.RegisterSingleton<IVideoAbuseReportReasons, TVideoAbuseReportReasons>();
-        this.simpleinjector.RegisterSingleton<IVideoCategories, TVideoCategories>();
-        this.simpleinjector.RegisterSingleton<IVideos, TVideos>();
-        this.simpleinjector.RegisterSingleton<IWatermarks, TWatermarks>();
-
-        // this.simpleinjector.Verify();
-
-        this.Activities = this.simpleinjector.GetInstance<IActivities>();
-        this.Captions = this.simpleinjector.GetInstance<ICaptions>();
-        this.ChannelBanners = this.simpleinjector.GetInstance<IChannelBanners>();
-        this.Channels = this.simpleinjector.GetInstance<IChannels>();
-        this.ChannelSections = this.simpleinjector.GetInstance<IChannelSections>();
-        this.Comments = this.simpleinjector.GetInstance<IComments>();
-        this.CommentThreads = this.simpleinjector.GetInstance<ICommentThreads>();
-        this.I18NLanguages = this.simpleinjector.GetInstance<II18nLanguages>();
-        this.I18NRegions = this.simpleinjector.GetInstance<II18nRegions>();
-        this.Members = this.simpleinjector.GetInstance<IMembers>();
-        this.MembershipsLevels = this.simpleinjector.GetInstance<IMembershipsLevels>();
-        this.PlaylistImages = this.simpleinjector.GetInstance<IPlaylistImages>();
-        this.PlaylistItems = this.simpleinjector.GetInstance<IPlaylistItems>();
-        this.Playlists = this.simpleinjector.GetInstance<IPlaylists>();
-        this.Search = this.simpleinjector.GetInstance<ISearch>();
-        this.Subscriptions = this.simpleinjector.GetInstance<ISubscriptions>();
-        this.Thumbnails = this.simpleinjector.GetInstance<IThumbnails>();
-        this.VideoAbuseReportReasons = this.simpleinjector.GetInstance<IVideoAbuseReportReasons>();
-        this.VideoCategories = this.simpleinjector.GetInstance<IVideoCategories>();
-        this.Videos = this.simpleinjector.GetInstance<IVideos>();
-        this.Watermarks = this.simpleinjector.GetInstance<IWatermarks>();
+        var httpClient = new RestClient(options);
+        httpClient.AddDefaultQueryParameter("part", "snippet");
+        httpClient.AddDefaultQueryParameter("alt", "json");
+        return httpClient;
     }
 }

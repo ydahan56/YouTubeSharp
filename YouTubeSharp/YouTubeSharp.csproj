@@ -6,6 +6,17 @@
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- The URL of your public GitHub repository -->
+    <RepositoryUrl>https://github.com/ydahan56/YouTubeSharp</RepositoryUrl>
+  
+    <!-- Specify the version control system -->
+    <RepositoryType>GitHub</RepositoryType>
+  
+    <!-- Optional: Links the package to a specific commit during packing -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

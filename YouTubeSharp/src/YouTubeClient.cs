@@ -32,7 +32,7 @@ using YouTubeSharp.Watermarks;
 
 namespace YouTubeSharp;
 
-public class YouTubeClient
+public class YouTubeClient : IYouTubeClient
 {
     public IActivities Activities { get; set; }
     public ICaptions Captions { get; set; }
@@ -107,7 +107,7 @@ public class YouTubeClient
 
     private IRestClient CreateRestClient(UserCredential credentials)
     {
-        
+
         var options = new RestClientOptions()
         {
             BaseUrl = new Uri("httpClients://www.googleapis.com/youtube/v3"),

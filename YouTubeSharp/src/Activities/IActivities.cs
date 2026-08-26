@@ -17,13 +17,13 @@ namespace YouTubeSharp.Activities
         /// <param name="regionCode">The regionCode parameter instructs the API to return results for the specified country.</param>
         /// <returns>A RestResponse containing the root response model.</returns>
         RestResponse<Models.Response.Root> list(
-            string? part = null, 
-            string? channelId = null, 
-            bool? mine = null, 
-            int? maxResults = null, 
-            string? pageToken = null, 
-            string? publishedAfter = null, 
-            string? publishedBefore = null, 
+            string? part = null,
+            string? channelId = null,
+            bool? mine = null,
+            int? maxResults = null,
+            string? pageToken = null,
+            string? publishedAfter = null,
+            string? publishedBefore = null,
             string? regionCode = null);
     }
 }

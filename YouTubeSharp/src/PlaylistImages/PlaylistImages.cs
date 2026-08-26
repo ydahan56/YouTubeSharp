@@ -45,7 +45,7 @@ namespace YouTubeSharp.PlaylistImages
             var request = new RestRequest("/playlistImages", Method.Post);
 
             request.AddQueryParameter("part", queryParams.Part);
-            
+
             if (!string.IsNullOrWhiteSpace(queryParams.OnBehalfOfContentOwner))
                 request.AddQueryParameter("onBehalfOfContentOwner", queryParams.OnBehalfOfContentOwner);
 

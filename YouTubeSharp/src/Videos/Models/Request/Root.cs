@@ -19,7 +19,7 @@ namespace YouTubeSharp.Videos.Models.Request
         public string? Part { get; set; } = "snippet,status";
         public bool? NotifySubscribers { get; set; } = true;
         public Video? Resource { get; set; }
-        
+
         // Binary Payload properties
         public byte[]? VideoBytes { get; set; }
         public string? ContentType { get; set; } = "video/mp4";

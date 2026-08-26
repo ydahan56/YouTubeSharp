@@ -14,9 +14,9 @@ namespace YouTubeSharp.ChannelBanners
         }
 
         public RestResponse<ChannelBannerResource> insert(
-            ChannelBannersInsertRequest queryParams, 
-            byte[] fileBytes, 
-            string fileName, 
+            ChannelBannersInsertRequest queryParams,
+            byte[] fileBytes,
+            string fileName,
             string mimeType)
         {
             // Note: YouTube Media upload structures are typically directed toward 

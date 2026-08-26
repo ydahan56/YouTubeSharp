@@ -12,32 +12,32 @@ namespace YouTubeSharp.Activities
         }
 
         public RestResponse<Models.Response.Root> list(
-            string? part = null, 
-            string? channelId = null, 
-            bool? mine = null, 
-            int? maxResults = null, 
-            string? pageToken = null, 
-            string? publishedAfter = null, 
-            string? publishedBefore = null, 
+            string? part = null,
+            string? channelId = null,
+            bool? mine = null,
+            int? maxResults = null,
+            string? pageToken = null,
+            string? publishedAfter = null,
+            string? publishedBefore = null,
             string? regionCode = null)
         {
             var request = new RestRequest("/activities", Method.Get);
-            
+
             if (!string.IsNullOrWhiteSpace(part))
                 request.AddQueryParameter("part", part);
 
             if (!string.IsNullOrWhiteSpace(channelId))
                 request.AddQueryParameter("channelId", channelId);
-                
+
             if (mine.HasValue)
                 request.AddQueryParameter("mine", mine.Value.ToString().ToLower());
 
             if (maxResults.HasValue)
                 request.AddQueryParameter("maxResults", maxResults.Value.ToString());
-                
+
             if (!string.IsNullOrWhiteSpace(pageToken))
                 request.AddQueryParameter("pageToken", pageToken);
-                
+
             if (!string.IsNullOrWhiteSpace(publishedAfter))
                 request.AddQueryParameter("publishedAfter", publishedAfter);
 

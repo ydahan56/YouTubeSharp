@@ -1,10 +1,6 @@
 ﻿using Google.Apis.Auth.OAuth2;
-using Nito.AsyncEx;
 using RestSharp;
 using RestSharp.Interceptors;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace YouTubeSharp
 {

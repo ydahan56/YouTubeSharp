@@ -14,16 +14,31 @@
   
     <!-- Optional: Links the package to a specific commit during packing -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <AssemblyVersion>1.0.4</AssemblyVersion>
     <FileVersion>1.0.4</FileVersion>
-    <Description>A simple wrapper around the YouTube API made for simplicity.</Description>
-    <PackageIcon>icon.png</PackageIcon>
+    <Description>A friendly unofficial C# SDK for YouTube v3 API made for simplicity</Description>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageId>yoni56.YouTubeSharpSdk</PackageId>
+    <Title>A friendly unofficial C# SDK for YouTube v3 API made for simplicity</Title>
+    <Authors>Jonathan D.</Authors>
+    <Company>NA</Company>
+    <Product />
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>google, youtube, api</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Include the icon in the NuGet package -->
-    <None Include="icon.png" Pack="true" PackagePath="\" />
+    <Compile Remove="Search\**" />
+    <EmbeddedResource Remove="Search\**" />
+    <None Remove="Search\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -34,14 +49,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Search\Models\Request\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="credentials.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="logo.png" Pack="true" PackagePath="\" />
+    <None Update="logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

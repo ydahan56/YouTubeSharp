@@ -1,5 +1,4 @@
 ﻿using RestSharp;
-using YouTubeSharp.Search;
 
 namespace YouTubeSharp.Search;
 

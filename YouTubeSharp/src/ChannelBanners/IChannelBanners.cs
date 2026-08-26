@@ -15,9 +15,9 @@ namespace YouTubeSharp.ChannelBanners
         /// <param name="mimeType">The image MIME content type (e.g., "image/png", "image/jpeg").</param>
         /// <returns>A RestResponse returning the ChannelBannerResource confirmation data.</returns>
         RestResponse<ChannelBannerResource> insert(
-            ChannelBannersInsertRequest queryParams, 
-            byte[] fileBytes, 
-            string fileName, 
+            ChannelBannersInsertRequest queryParams,
+            byte[] fileBytes,
+            string fileName,
             string mimeType);
     }
 }

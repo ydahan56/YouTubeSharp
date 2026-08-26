@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace YouTubeSharp.I18nRegions.Models.Response

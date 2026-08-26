@@ -1,5 +1,4 @@
 ﻿using RestSharp;
-using YouTubeSharp.PlaylistItems.Models.Request;
 
 namespace YouTubeSharp.PlaylistItems
 {
@@ -16,36 +15,36 @@ namespace YouTubeSharp.PlaylistItems
         /// Returns a collection of playlist items that match the API request criteria. 
         /// </summary>
         public RestResponse<Models.Response.Root> list(
-            string part, 
-            string? id = null, 
-            string? playlistId = null, 
-            int? maxResults = null, 
-            string? pageToken = null, 
-            string? videoId = null, 
+            string part,
+            string? id = null,
+            string? playlistId = null,
+            int? maxResults = null,
+            string? pageToken = null,
+            string? videoId = null,
             string? onBehalfOfContentOwner = null)
         {
             var request = new RestRequest("/playlistItems", Method.Get);
-            
+
             // Required Parameter
             request.AddQueryParameter("part", part);
 
             // Filters (Exactly one of id or playlistId should be provided, though videoId is also supported as a filter)
             if (!string.IsNullOrWhiteSpace(id))
                 request.AddQueryParameter("id", id);
-                
+
             if (!string.IsNullOrWhiteSpace(playlistId))
                 request.AddQueryParameter("playlistId", playlistId);
-                
+
             if (!string.IsNullOrWhiteSpace(videoId))
                 request.AddQueryParameter("videoId", videoId);
 
             // Optional Parameters
             if (maxResults.HasValue)
                 request.AddQueryParameter("maxResults", maxResults.Value.ToString());
-                
+
             if (!string.IsNullOrWhiteSpace(pageToken))
                 request.AddQueryParameter("pageToken", pageToken);
-                
+
             if (!string.IsNullOrWhiteSpace(onBehalfOfContentOwner))
                 request.AddQueryParameter("onBehalfOfContentOwner", onBehalfOfContentOwner);
 
@@ -56,12 +55,12 @@ namespace YouTubeSharp.PlaylistItems
         /// Adds a new resource (usually a video) to a YouTube playlist.
         /// </summary>
         public RestResponse<Models.Response.Root> insert(
-            string part, 
-            Models.Request.PlaylistItem item, 
+            string part,
+            Models.Request.PlaylistItem item,
             string? onBehalfOfContentOwner = null)
         {
             var request = new RestRequest("/playlistItems", Method.Post);
-            
+
             // Required Parameter
             request.AddQueryParameter("part", part);
 
@@ -79,13 +78,13 @@ namespace YouTubeSharp.PlaylistItems
         /// Updates or creates a playlist item within a YouTube playlist.
         /// </summary>
         public RestResponse<Models.Response.Root> update(
-            string part, 
-            Models.Request.PlaylistItem item, 
+            string part,
+            Models.Request.PlaylistItem item,
             string? onBehalfOfContentOwner = null)
         {
             // Note: Updated to use Method.Put per REST API standards for updates
             var request = new RestRequest("/playlistItems", Method.Put);
-            
+
             // Required Parameter
             request.AddQueryParameter("part", part);
 
@@ -105,7 +104,7 @@ namespace YouTubeSharp.PlaylistItems
         public RestResponse delete(string id, string? onBehalfOfContentOwner = null)
         {
             var request = new RestRequest("/playlistItems", Method.Delete);
-            
+
             // Required Parameter
             request.AddQueryParameter("id", id);
 

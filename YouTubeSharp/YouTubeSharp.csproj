@@ -14,7 +14,7 @@
   
     <!-- Optional: Links the package to a specific commit during packing -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <AssemblyVersion>1.0.4</AssemblyVersion>
     <FileVersion>1.0.4</FileVersion>
     <Description>A friendly unofficial C# SDK for YouTube v3 API made for simplicity</Description>
